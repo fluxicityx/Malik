@@ -1,3 +1,14 @@
+// choices are either rock paper or scissors, function game does a loop to play the round 5 times and logs every win //
+// player choice function gets the input of the player, if there is nothing written in the prompt, then it asks again.//
+//computer choice gets a random choice from choices "rock paper or scissors" validate makes sure that the choice is rock paper or scissors //
+//checkwinner function gets the player choice and sees if it matches up with the computer choice, which results in a tie, if they win, or if they lose.//
+//log round and log wins just logs who wins and who loses and logs it in the console to find out if you win or lose//
+
+
+
+
+
+
 const choices = ["rock", "paper", "scissors"]
 let winners = [];
 
