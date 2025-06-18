@@ -38,7 +38,10 @@ function game(){
     logWins();
 }
 
-function playRound(playersChoice){
+
+
+function playRound(playerChoice){
+    let wins = checkWins()
     const computerChoice = computerSelect();
     if (wins >= 5){
         return
@@ -46,7 +49,6 @@ function playRound(playersChoice){
     const winner = checkWinner(playerChoice, computerChoice)
 
     winners.push(winner);
-    logRound(playerSelection, computerSelection, winner, round);
     tallyWins();
     displayRound(playerChoice,computerChoice,winner);
     wins = checkWins();
@@ -72,16 +74,21 @@ function displayRound(playerChoice,computerChoice,winner){
     document.querySelector(".playerChoice").textContent = `You Chose: ${playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)}`;
     document.querySelector(".computerChoice").textContent = `Computer Chose: ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)}`;
     document.querySelector('.winner').textContent = `Round Winner: ${winner}`;
-
 }
+displayRound('rock', 'paper', 'Player')
+
 
 function tallyWins(){
     const pWinCount = winners.filter((item) => item == "Player").length;
     const cWinCount = winners.filter((item) => item == "Computer").length
     const ties = winners.filter((item) => item == "Tie").length
      document.querySelector(".playerScore").textContent = `Score: ${pWinCount}`;
-     document.querySelector(".computerScore").textContent = `Score: ${cWinCountWin}`;
+     document.querySelector(".computerScore").textContent = `Score: ${cWinCount}`;
      document.querySelector(".ties").textContent = `Score: ${ties}`;
+}
+
+function computerSelect(){
+    return choices[Math.floor(Math.random() * choices.length)]
 }
 
 function playerChoice(){
@@ -150,4 +157,4 @@ function logWins() {
     console.log("-----------")
 }
 
-game();
+startGame();
