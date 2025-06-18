@@ -15,7 +15,14 @@ let winners = [];
 
 
 function resetGame() {
-
+    winners = [];
+    document.querySelector('.playerScore').textContent = "Score: 0"
+    document.querySelector('.computeScore').textContent = "Score: 0"
+    document.querySelector('.ties').textContent = "ties: 0"
+    document.querySelector('.winner').textContent = ""
+    document.querySelector('.playerChoice').textContent = ""
+    document.querySelector('.computerChoice').textContent = ""
+    document.querySelector('.reset').textContent = "none"
 }
  
 function startGame() {
